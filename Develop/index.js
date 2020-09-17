@@ -6,7 +6,7 @@ const api = require("./utils/api.js");
 const path = require("path");
 const axios = require('axios');
 let email = '';
-let divider = '---------------------';
+let divider = '# ';
 
 const questions = [
     {
@@ -78,9 +78,8 @@ function getUserProfile(username) {
   axios.get(queryUrl).then(function(res) {
     const avatarUrl = res.data.avatar_url;
     console.log('my avatar is', avatarUrl);
-    fs.appendFileSync('README.md', '# ' + avatarUrl + '\n');
-    fs.appendFileSync('README.md', divider + '  ');
-    fs.appendFileSync('README.md', '# ' + email);
+    fs.appendFileSync('README.md', divider + avatarUrl + '\n' + '\n');
+    fs.appendFileSync('README.md', divider + email);
   });
 }
 
