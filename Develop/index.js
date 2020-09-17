@@ -30,6 +30,12 @@ const questions = [
         name: "description"
       },
       {
+        type: "input",
+        message: "Please provide a Table of Contents",
+        name: "tableOfContents",
+        default: "Table of Contents"
+      },
+      {
           type: "list",
           message: "What kind of license should your project have?",
           name: "license",
@@ -56,6 +62,11 @@ const questions = [
         type: "input",
         message: "What do users need to know about contributing to the repo?",
         name: "contributing"
+      },
+      {
+        type: "input",
+        message: "Do you have any questions?",
+        name: "repoQuestions"
       }
 ];
 
@@ -65,7 +76,7 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer.prompt(questions).then((response) => {
-        writeToFile("README.md", generate({...response}));
+        writeToFile("README.md", generate(response));
         getUserProfile(response.username);
         email = response.email;
       });
@@ -78,8 +89,8 @@ function getUserProfile(username) {
   axios.get(queryUrl).then(function(res) {
     const avatarUrl = res.data.avatar_url;
     console.log('my avatar is', avatarUrl);
-    fs.appendFileSync('README.md', divider + avatarUrl + '\n' + '\n');
-    fs.appendFileSync('README.md', divider + email);
+    fs.appendFileSync('README.md', divider + ' Avatar Url:' + '\n' + avatarUrl + '\n' + '\n');
+    fs.appendFileSync('README.md', divider + ' Email Address:' + '\n' + email);
   });
 }
 
