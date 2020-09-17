@@ -79,8 +79,6 @@ function getUserProfile(username) {
     const avatarUrl = res.data.avatar_url;
     console.log('my avatar is', avatarUrl);
     fs.appendFileSync('README.md', '# ' + avatarUrl + '\n');
-
-
     fs.appendFileSync('README.md', divider + '  ');
     fs.appendFileSync('README.md', '# ' + email);
   });
