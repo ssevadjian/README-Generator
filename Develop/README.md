@@ -1,22 +1,28 @@
 
-# homework1
+# README-Generator
 
 # Description:
-Refactored the code of an existing webpage so that it follows accessibility standards and is optimized for search engines.
+Generate a README.md file from answering prompted questions
 
-# Table of Contents:
+# Table of Contents
+1. Installation
+2. Usage
+3. License
+3. Contributing
+4. Tests
+5. Questions
 
 # Installation:
 npm i
 
 # Usage:
-Node.js
+node.js
 
 # License:
-None
+MIT
 
 # Contributing:
-Anyone can contribute to the repo.
+Users are free to contribute
 
 # Tests:
 npm test
@@ -24,8 +30,5 @@ npm test
 # Questions:
 No
 
-  #  Avatar Url:
-https://avatars2.githubusercontent.com/u/66563313?v=4
-
-#  Email Address:
-sjsevadjian@gmail.com
+<img src= "https://avatars2.githubusercontent.com/u/66563313?v=4" style="border-radius: 25px">
+  

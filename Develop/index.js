@@ -75,24 +75,28 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-    inquirer.prompt(questions).then((response) => {
-        writeToFile("README.md", generate(response));
-        getUserProfile(response.username);
-        email = response.email;
-      });
-    }
+  inquirer.prompt(questions).then(async function (response) {
+    const queryUrl = `https://api.github.com/users/${response.username}`;
+    await axios.get(queryUrl).then(function (res) {
+    avatarUrl = res.data.avatar_url;
+    // getUserProfile(response.username);
+    writeToFile("README.md", generate(avatarUrl,{ ...response }));
+    email = response.email;
+  });
+})
+}
 
 init();
 
-function getUserProfile(username) {
-  const queryUrl = `https://api.github.com/users/${username}`;
-  axios.get(queryUrl).then(function(res) {
-    const avatarUrl = res.data.avatar_url;
-    console.log('my avatar is', avatarUrl);
-    fs.appendFileSync('README.md', divider + ' Avatar Url:' + '\n' + avatarUrl + '\n' + '\n');
-    fs.appendFileSync('README.md', divider + ' Email Address:' + '\n' + email);
-  });
-}
+// function getUserProfile(username) {
+//   const queryUrl = `https://api.github.com/users/${username}`;
+//   axios.get(queryUrl).then(function(res) {
+//     const avatarUrl = res.data.avatar_url;
+//     console.log('my avatar is', avatarUrl);
+//     fs.appendFileSync('README.md', divider + ' Avatar Url:' + '\n' + avatarUrl + '\n' + '\n');
+//     fs.appendFileSync('README.md', divider + ' Email Address:' + '\n' + email);
+//   });
+// }
 
 //create function to run API and axios parameters - 
  

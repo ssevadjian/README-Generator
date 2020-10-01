@@ -1,11 +1,17 @@
-function generateMarkdown(data) {
+function generateMarkdown(avatarUrl, data) {
   return `
 # ${data.projectName}
 
 # Description:
 ${data.description}
 
-# ${data.tableOfContents}:
+# ${data.tableOfContents}
+1. Installation
+2. Usage
+3. License
+3. Contributing
+4. Tests
+5. Questions
 
 # Installation:
 ${data.dependencies}
@@ -25,6 +31,7 @@ ${data.tests}
 # Questions:
 ${data.repoQuestions}
 
+<img src= "${avatarUrl}" style="border-radius: 25px">
   `;
 }
 
