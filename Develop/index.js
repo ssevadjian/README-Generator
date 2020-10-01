@@ -6,7 +6,6 @@ const api = require("./utils/api.js");
 const path = require("path");
 const axios = require('axios');
 let email = '';
-let divider = '# ';
 
 const questions = [
     {
@@ -88,30 +87,3 @@ function init() {
 
 init();
 
-// function getUserProfile(username) {
-//   const queryUrl = `https://api.github.com/users/${username}`;
-//   axios.get(queryUrl).then(function(res) {
-//     const avatarUrl = res.data.avatar_url;
-//     console.log('my avatar is', avatarUrl);
-//     fs.appendFileSync('README.md', divider + ' Avatar Url:' + '\n' + avatarUrl + '\n' + '\n');
-//     fs.appendFileSync('README.md', divider + ' Email Address:' + '\n' + email);
-//   });
-// }
-
-//create function to run API and axios parameters - 
- 
-// Get Porfile Pic and Email.
-// module.exports = async function getUserProfile(username) {
-//   let res = {};
-//   await axios
-//     .get(`https://api.github.com/users/${username}`)
-//     .then(({ data: { avatar_url } }) => {
-//       res = { avatar_url, isValid: true };
-//       console.log('this is my git request');
-//     })
-//     .catch((err) => {
-//       console.log(err.message);
-//       res = { avatar_url: false, isValid: false, message: err.message };
-//     });
-//   return res;
-// };

@@ -2,7 +2,7 @@
 # README-Generator
 
 # Description:
-Generate a README.md file from answering prompted questions
+Automatically generate a README.md file by answering prompted questions
 
 # Table of Contents
 1. Installation
@@ -16,13 +16,13 @@ Generate a README.md file from answering prompted questions
 npm i
 
 # Usage:
-node.js
+Node.js
 
 # License:
 MIT
 
 # Contributing:
-Users are free to contribute
+Nothing; users are free to contribute
 
 # Tests:
 npm test
